@@ -34,8 +34,10 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Update the package list and install necessary packages
 RUN apt-get update && \
-    apt-get install -y gcc mono-mcs python3 openjdk-8-jdk-headless && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get -y install gcc mono-mcs && \
+    apt-get -y install pyt \
+    rm -rf /var/lib/apt/lists/* && 
+
 
 ENV java=/usr/lib/jvm/java-8-openjdk-amd64/
 
